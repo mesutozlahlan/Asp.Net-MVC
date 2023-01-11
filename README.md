@@ -19,6 +19,6 @@ Database Part
   
  - Admin 
        
-      UserID : Admin 
+      UserID : admin 
        
-      Password : 12345
+      Password : 1234
