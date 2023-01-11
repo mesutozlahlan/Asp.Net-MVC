@@ -1,0 +1,128 @@
+﻿@model List<TimeZona.Models.PRODUCTS>
+@{
+    ViewBag.Title = "Ürünler";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Ürünler Sayfası</h1>
+
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+                        <li class="breadcrumb-item active">Ürünler</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        @Html.ActionLink("Yeni Ürün Ekle", "YeniUrunler", null, new { @class = "btn btn-primary mx4" })
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table id="example2" class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Foto</th>
+                                        <th>İsim</th>
+                                        <th>Fiyat</th>
+                                        <th>Güncelle</th>
+                                        <th>Sil</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var urun in Model)
+                                    {
+                                        <tr>
+                                            <td><img src="~/Content/img/@urun.PHOTO" width="150" /></td>
+                                            <td>
+                                                @urun.NAME
+                                            </td>
+                                            <td>@urun.PRICE</td>
+       
+                                            <td>
+                                                @Html.ActionLink("Güncelle", "Guncelle", new { urun.ID }, new { @class = "btn btn-info mx-4" })
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#sil_@urun.ID ">
+                                                    Sil
+                                                </button>
+                                                <div class="modal fade" id="sil_@urun.ID">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title">İçerik</h4>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <h4>Ürünü Silmek İstiyor Musunuz?</h4>
+                                                            </div>
+                                                            <div class="modal-footer justify-content-between">
+                                                                <button type="button" class="btn btn-default" data-dismiss="modal">Vazgeç</button>
+                                                                @Html.ActionLink("Sil", "SilDetay", new { urun.ID }, new { @class = "btn btn-danger" })
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal-content -->
+                                                    </div>
+                                                    <!-- /.modal-dialog -->
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Foto</th>
+                                        <th>İsim</th>
+                                        <th>Fiyat</th>
+                                        <th>Güncelle</th>
+                                        <th>Sil</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- /.card -->
+<script>
+    $(function () {
+        $("#example1").DataTable({
+            "responsive": true, "lengthChange": false, "autoWidth": false,
+            "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+        }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+
+
+                    }

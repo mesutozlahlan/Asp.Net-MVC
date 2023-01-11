@@ -1,0 +1,56 @@
+﻿@model TimeZona.Models.ABOUTUS
+@{
+    ViewBag.Title = "Hakkımızda";
+    Layout = "~/Areas/admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="content-wrapper">
+    <div class="container">
+        <h2>Hakkımızda Güncelle Sayfası</h2>
+
+        @using (Html.BeginForm("Kaydet", "Hakkimizda", FormMethod.Post))
+        {
+            <table class="table table-bordered">
+                <tr>
+                    <td>
+                        Başlık
+                        @Html.TextBoxFor(m => m.HEADER, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.HEADER)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        İçerik
+                        @Html.TextAreaFor(m => m.SUBJECT, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.SUBJECT)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.HiddenFor(m => m.ID)
+                        <input type="submit" value="Güncelle" class="btn btn-success" />
+                    </td>
+                </tr>
+
+            </table>
+        }
+
+    </div>
+</div>
+
+@section altTaraf{
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Content/admin/plugins/summernote/summernote-bs4.min.css">
+    <!-- Summernote -->
+    <script src="~/Content/admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <script>
+        $(function () {
+            // Summernote
+            $('#icerik').summernote()
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        })
+    </script>
+}

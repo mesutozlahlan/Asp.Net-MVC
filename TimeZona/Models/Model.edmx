@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TimeZonaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ABOUTUS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HEADER" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SUBJECT" Type="nchar" MaxLength="1000" Nullable="false" />
+          <Property Name="ACTİVE" Type="tinyint" Nullable="false" />
+          <Property Name="ORDER" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ADMİNLOGİN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAMESURNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ROLE" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="LOGİN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAMESURNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PHOTO" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="NAME" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="PRICE" Type="int" Nullable="false" />
+          <Property Name="QUEUE" Type="int" />
+          <Property Name="ACTİVE" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="PRODUCTSDETAILS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PHOTO" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="NAME" Type="nchar" MaxLength="100" Nullable="false" />
+          <Property Name="CONTENTS" Type="nchar" MaxLength="1000" Nullable="false" />
+          <Property Name="QUEUE" Type="int" />
+          <Property Name="ACTIVE" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="SHOP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PHOTO" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="NAME" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="PRİCE" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TimeZonaModelStoreContainer">
+          <EntitySet Name="ABOUTUS" EntityType="Self.ABOUTUS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ADMİNLOGİN" EntityType="Self.ADMİNLOGİN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOGİN" EntityType="Self.LOGİN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PRODUCTSDETAILS" EntityType="Self.PRODUCTSDETAILS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SHOP" EntityType="Self.SHOP" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TimeZonaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ABOUTUS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HEADER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SUBJECT" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="ACTİVE" Type="Byte" Nullable="false" />
+          <Property Name="ORDER" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ADMİNLOGİN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAMESURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ROLE" Type="Byte" />
+        </EntityType>
+        <EntityType Name="LOGİN">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAMESURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PRODUCTS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PHOTO" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PRICE" Type="Int32" Nullable="false" />
+          <Property Name="QUEUE" Type="Int32" />
+          <Property Name="ACTİVE" Type="Byte" />
+        </EntityType>
+        <EntityType Name="PRODUCTSDETAILS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PHOTO" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="CONTENTS" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="QUEUE" Type="Int32" />
+          <Property Name="ACTIVE" Type="Byte" />
+        </EntityType>
+        <EntityType Name="SHOP">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PHOTO" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="NAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="PRİCE" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TimeZonaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ABOUTUS" EntityType="Self.ABOUTUS" />
+          <EntitySet Name="ADMİNLOGİN" EntityType="Self.ADMİNLOGİN" />
+          <EntitySet Name="LOGİN" EntityType="Self.LOGİN" />
+          <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" />
+          <EntitySet Name="PRODUCTSDETAILS" EntityType="Self.PRODUCTSDETAILS" />
+          <EntitySet Name="SHOP" EntityType="Self.SHOP" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TimeZonaModelStoreContainer" CdmEntityContainer="TimeZonaEntities">
+          <EntitySetMapping Name="ABOUTUS">
+            <EntityTypeMapping TypeName="TimeZonaModel.ABOUTUS">
+              <MappingFragment StoreEntitySet="ABOUTUS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="HEADER" ColumnName="HEADER" />
+                <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+                <ScalarProperty Name="ACTİVE" ColumnName="ACTİVE" />
+                <ScalarProperty Name="ORDER" ColumnName="ORDER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ADMİNLOGİN">
+            <EntityTypeMapping TypeName="TimeZonaModel.ADMİNLOGİN">
+              <MappingFragment StoreEntitySet="ADMİNLOGİN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAMESURNAME" ColumnName="NAMESURNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOGİN">
+            <EntityTypeMapping TypeName="TimeZonaModel.LOGİN">
+              <MappingFragment StoreEntitySet="LOGİN">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NAMESURNAME" ColumnName="NAMESURNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTS">
+            <EntityTypeMapping TypeName="TimeZonaModel.PRODUCTS">
+              <MappingFragment StoreEntitySet="PRODUCTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+                <ScalarProperty Name="QUEUE" ColumnName="QUEUE" />
+                <ScalarProperty Name="ACTİVE" ColumnName="ACTİVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTSDETAILS">
+            <EntityTypeMapping TypeName="TimeZonaModel.PRODUCTSDETAILS">
+              <MappingFragment StoreEntitySet="PRODUCTSDETAILS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="CONTENTS" ColumnName="CONTENTS" />
+                <ScalarProperty Name="QUEUE" ColumnName="QUEUE" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SHOP">
+            <EntityTypeMapping TypeName="TimeZonaModel.SHOP">
+              <MappingFragment StoreEntitySet="SHOP">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="PRİCE" ColumnName="PRİCE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

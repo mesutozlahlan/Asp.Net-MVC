@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TimeZonaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ABOUTUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HEADER" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="SUBJECT" Type="nchar" MaxLength="1000" Nullable="false" />
+    <Property Name="ACTİVE" Type="tinyint" Nullable="false" />
+    <Property Name="ORDER" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ADMİNLOGİN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAMESURNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="ROLE" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="LOGİN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NAMESURNAME" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PHOTO" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="NAME" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="PRICE" Type="int" Nullable="false" />
+    <Property Name="QUEUE" Type="int" />
+    <Property Name="ACTİVE" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="PRODUCTSDETAILS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PHOTO" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="NAME" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="CONTENTS" Type="nchar" MaxLength="1000" Nullable="false" />
+    <Property Name="QUEUE" Type="int" />
+    <Property Name="ACTIVE" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="SHOP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PHOTO" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="NAME" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="PRİCE" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TimeZonaModelStoreContainer">
+    <EntitySet Name="ABOUTUS" EntityType="Self.ABOUTUS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ADMİNLOGİN" EntityType="Self.ADMİNLOGİN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOGİN" EntityType="Self.LOGİN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PRODUCTSDETAILS" EntityType="Self.PRODUCTSDETAILS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SHOP" EntityType="Self.SHOP" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TimeZonaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ABOUTUS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HEADER" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SUBJECT" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ACTİVE" Type="Byte" Nullable="false" />
+    <Property Name="ORDER" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ADMİNLOGİN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAMESURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ROLE" Type="Byte" />
+  </EntityType>
+  <EntityType Name="LOGİN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAMESURNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PASSWORD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PRODUCTS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PHOTO" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PRICE" Type="Int32" Nullable="false" />
+    <Property Name="QUEUE" Type="Int32" />
+    <Property Name="ACTİVE" Type="Byte" />
+  </EntityType>
+  <EntityType Name="PRODUCTSDETAILS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PHOTO" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CONTENTS" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="QUEUE" Type="Int32" />
+    <Property Name="ACTIVE" Type="Byte" />
+  </EntityType>
+  <EntityType Name="SHOP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PHOTO" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PRİCE" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="TimeZonaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ABOUTUS" EntityType="Self.ABOUTUS" />
+    <EntitySet Name="ADMİNLOGİN" EntityType="Self.ADMİNLOGİN" />
+    <EntitySet Name="LOGİN" EntityType="Self.LOGİN" />
+    <EntitySet Name="PRODUCTS" EntityType="Self.PRODUCTS" />
+    <EntitySet Name="PRODUCTSDETAILS" EntityType="Self.PRODUCTSDETAILS" />
+    <EntitySet Name="SHOP" EntityType="Self.SHOP" />
+  </EntityContainer>
+</Schema>

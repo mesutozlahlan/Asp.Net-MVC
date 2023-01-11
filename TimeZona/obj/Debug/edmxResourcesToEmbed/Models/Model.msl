@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TimeZonaModelStoreContainer" CdmEntityContainer="TimeZonaEntities">
+    <EntitySetMapping Name="ABOUTUS">
+      <EntityTypeMapping TypeName="TimeZonaModel.ABOUTUS">
+        <MappingFragment StoreEntitySet="ABOUTUS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="HEADER" ColumnName="HEADER" />
+          <ScalarProperty Name="SUBJECT" ColumnName="SUBJECT" />
+          <ScalarProperty Name="ACTİVE" ColumnName="ACTİVE" />
+          <ScalarProperty Name="ORDER" ColumnName="ORDER" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ADMİNLOGİN">
+      <EntityTypeMapping TypeName="TimeZonaModel.ADMİNLOGİN">
+        <MappingFragment StoreEntitySet="ADMİNLOGİN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAMESURNAME" ColumnName="NAMESURNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="ROLE" ColumnName="ROLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LOGİN">
+      <EntityTypeMapping TypeName="TimeZonaModel.LOGİN">
+        <MappingFragment StoreEntitySet="LOGİN">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NAMESURNAME" ColumnName="NAMESURNAME" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTS">
+      <EntityTypeMapping TypeName="TimeZonaModel.PRODUCTS">
+        <MappingFragment StoreEntitySet="PRODUCTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PRICE" ColumnName="PRICE" />
+          <ScalarProperty Name="QUEUE" ColumnName="QUEUE" />
+          <ScalarProperty Name="ACTİVE" ColumnName="ACTİVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTSDETAILS">
+      <EntityTypeMapping TypeName="TimeZonaModel.PRODUCTSDETAILS">
+        <MappingFragment StoreEntitySet="PRODUCTSDETAILS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="CONTENTS" ColumnName="CONTENTS" />
+          <ScalarProperty Name="QUEUE" ColumnName="QUEUE" />
+          <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SHOP">
+      <EntityTypeMapping TypeName="TimeZonaModel.SHOP">
+        <MappingFragment StoreEntitySet="SHOP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="PRİCE" ColumnName="PRİCE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
